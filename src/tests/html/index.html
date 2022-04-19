@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="300" height="300">
+      current stock price: $3.15 +0.15
+    </canvas>
+    <img src="" alt="">
+
+    <canvas id="canvas1" width="300" height="300">
+      current stock price: $3.15 +0.15
+    </canvas>
+
+    <script>
+        const canvas = document.getElementById("canvas");
+        const canvas1 = document.getElementById("canvas1");
+        const ctx = canvas.getContext("2d");
+        const ctx1 = canvas1.getContext("2d");
+        ctx.fillStyle = "green"
+        ctx.fillRect(0, 0, 100, canvas.height)
+        ctx.clearRect(10, 0, 10, canvas.height)
+        ctx.clearRect(30, 0, 10, canvas.height)
+        ctx.clearRect(50, 0, 10, canvas.height)
+        ctx.rect(60, 0, 10, 10)
+
+        var path = new Path2D();
+        path.arc(75, 75, 50, 0, Math.PI * 2, true);
+        path.moveTo(110, 75);
+        path.arc(75, 75, 35, 0, Math.PI, false);
+        path.moveTo(65, 65);
+        path.arc(60, 65, 5, 0, Math.PI * 2, true);
+        path.moveTo(95, 65);
+        path.arc(90, 65, 5, 0, Math.PI * 2, true);
+
+        ctx.strokeStyle = 'red';
+        ctx.stroke(path);
+    </script>
+</body>
+
+</html>
